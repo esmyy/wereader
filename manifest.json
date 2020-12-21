@@ -10,24 +10,15 @@
   },
   "background": {
     "server_worker": [
-      "background.js",
-      "html2canvas.min.js"
+      "background/main.js",
+      "lib/html2canvas.min.js"
     ]
   },
   "content_scripts": [
     {
       "matches": ["https://weread.qq.com/web/reader/*"],
-      "js": ["content-script.js"]
+      "js": ["content/content-script.js"]
     }
   ],
-  "options_page": "options.html",
-  "commands": {
-    "_execute_browser_action": {
-      "suggested_key": {
-        "default": "Ctrl+Shift+F",
-        "mac": "MacCtrl+Shift+F"
-      },
-      "description": "Opens hello.html"
-    }
-  }
+  "options_page": "options.html"
 }

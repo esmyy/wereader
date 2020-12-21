@@ -5,5 +5,11 @@ if (!noteList) {
 }
 
 
+chrome.runtime.sendMessage({
+  type: 'generate',
+  data: noteList
+})
+
+
 
 console.log(noteList)

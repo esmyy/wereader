@@ -13,16 +13,13 @@ function generate() {
 }
 
 var scripts = {
-  generate: 'execute/generate.js'
+  generate: 'inject/generate.js'
 }
 
 document.querySelector("#fetchAllBtn").addEventListener("click", function() {
   chrome.tabs.executeScript({
     file: scripts.generate
+  }, function(data) {
+    console.log('data', data);
   });
-});
-
-
-chrome.tabs.executeScript({
-  file: 'contentScript.js'
 });
