@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+<style>
+div,
+input {
+  padding: 0;
+  margin: 0;
+}
+.config-wrapper {
+  width: 600px;
+  margin: 0 auto;
+  background: gray;
+  padding: 20px;
+}
+#colorList {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -20px;
+}
+.color {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100px;
+  height: 80px;
+  /* border-radius: 6px; */
+  background: red;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+#colorList input {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: gray;
+}
+.bg-color input:checked {
+  color: green;
+}
+</style>
+</head>
+<body>
+  <div class="config-wrapper">
+    <div>
+      <h3>背景颜色/字体颜色 使用标准模板</h3>
+      <div id="colorList">
+      </div>
+    </div>
+
+    <div>
+      <h3>自定义选择或输入</h3>
+      <div>
+        <span>背景颜色</span>
+        <input id="customBgColor" type="color" value="#000000" placeholder="背景颜色">
+      </div>
+      <div>
+        <span>文字颜色</span>
+        <input id="customTextColor" type="color" value="#ffffff" placeholder="输入文字颜色">
+      </div>
+      <div>
+        <button id="customConfirmBtn">确认使用自选颜色</button>
+      </div>
+    </div>
+    <div>
+      <h3>示例</h3>
+      <div id="capture" style="padding: 10px; background: #f5da55">
+          <h4 style="color: #000; ">Hello world!</h4>
+      </div>
+    </div>
+  </div>
+  <script src="html2canvas.min.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
