@@ -3,22 +3,28 @@
   "version": "0.1",
   "description": "Extension for exporting Weread's reading notes",
   "manifest_version": 2,
-  "permissions": ["storage","activeTab"],
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab"
+  ],
   "browser_action": {
-    "default_popup": "popup.html",
+    "default_popup": "./popup/popup.html",
     "default_icon": "images/icon_128.png"
   },
   "background": {
-    "server_worker": [
-      "background/main.js",
-      "lib/html2canvas.min.js"
-    ]
+    "page": "background/background.html",
+    "persistent": false
   },
   "content_scripts": [
     {
       "matches": ["https://weread.qq.com/web/reader/*"],
-      "js": ["content/content-script.js"]
+      "js": [
+        "lib/html2canvas.min.js",
+        "lib/filesaver.min.js",
+        "content/content-script.js"
+      ]
     }
   ],
-  "options_page": "options.html"
+  "options_page": "./options/options.html"
 }
