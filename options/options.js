@@ -61,9 +61,6 @@ function addColorList() {
 }
 
 addColorList();
-
-
-
 var colorListId = '#colorList'
 var colorListWrapper = document.querySelector(colorListId);
 var checkBoxList = colorListWrapper.querySelectorAll('input');

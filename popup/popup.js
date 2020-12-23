@@ -1,12 +1,27 @@
-
-var scripts = {
-  generate: 'inject/generate.js'
+const SELECTOR_NAME = {
+  copyBtn: '#copyBtn',
+  generateBtn: '#generateBtn',
 }
 
-document.querySelector("#fetchAllBtn").addEventListener("click", function() {
+const INJECT_SCRIPTS = {
+  copy: './inject/copy-notes.js',
+  generate: './inject/generate.js'
+}
+
+document.querySelector(SELECTOR_NAME.copyBtn).addEventListener('click', function() {
   chrome.tabs.executeScript({
-    file: scripts.generate
+    file: INJECT_SCRIPTS.copy
+  }, function(data) {
+    console.log('data', data); 
+    window.close();
+  });
+});
+
+document.querySelector(SELECTOR_NAME.generateBtn).addEventListener('click', function() {
+  chrome.tabs.executeScript({
+    file: INJECT_SCRIPTS.generate
   }, function(data) {
     console.log('data', data);
+    window.close();
   });
 });
