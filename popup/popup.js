@@ -36,6 +36,10 @@
     {
       id: '#generate',
       file: './inject/generate.js'
+    },
+    {
+      id: '#autoRead',
+      file: './inject/auto-read.js'
     }
   ];
   

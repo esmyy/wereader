@@ -41,15 +41,22 @@ body {
 </head>
 <body>
   <div class="section">
-    <p class="section-title">拷贝我的笔记</p>
+    <p class="section-title">拷贝笔记</p>
     <div class="sub-action">
-      <div id="copyAsText" class="action">拷贝为文本</div>
+      <div id="copyAsText" class="action">纯文本</div>
       <div id="copyAsJson" class="action">JSON</div>
       <!-- <div id="copyAsMd" class="action">HTML</div> -->
       <div id="copyAsHtml" class="action">HTML</div>
     </div>
   </div>
-  <div id="generate">存为图片</div>
+  <div class="section">
+    <p class="section-title">自动阅读</p>
+    <div class="sub-action">
+      <div id="autoRead" class="action">正常速度</div>
+      <!-- <div id="stopAutoRead">停止自动阅读</div> -->
+    </div>
+  </div>
+  <!-- <div id="generate">存为图片</div> -->
   <script type="module" src="popup.js"></script>
 </body>
 </html>
