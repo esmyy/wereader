@@ -7,20 +7,23 @@
   <title>Document</title>
 <style>
 body {
-  width: 120px;
+  width: 200px;
+}
+.section {
+  padding-bottom: 20px;
+}
+p {
+  margin: 0;
+  padding: 0;
 }
 .section-title {
   line-height: 30px;
   padding-left: 10px;
   border-radius: 4px;
-  cursor: pointer;
 }
 .section-title:hover {
-  background: gray;
-  color: #fff;
 }
 .sub-action {
-  display: none;
 }
 .action {
   display: flex;
@@ -28,10 +31,18 @@ body {
   justify-content: center;
   height: 20px;
   margin: 8px;
+  margin-top: 0;
   padding: 4px;
   cursor: pointer;
   border: 1px solid gray;
   border-radius: 4px;
+}
+.text {
+  padding: 0 10px;
+  margin-top: -6px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: red;
 }
 .action:hover {
   background: gray;
@@ -43,20 +54,20 @@ body {
   <div class="section">
     <p class="section-title">拷贝笔记</p>
     <div class="sub-action">
-      <div id="copyAsText" class="action">纯文本</div>
-      <div id="copyAsJson" class="action">JSON</div>
+      <div id="copyAsHtml" class="action">拷贝为 HTML</div>
+      <p class="text">拷贝后会自动打开 <a href="http://demo.mayueyue.com/showdownjs.html">编辑页面</a>，可以将笔记存为图片</p>
+      <!-- <div id="copyAsText" class="action">纯文本</div> -->
+      <div id="copyAsJson" class="action">拷贝为 JSON</div>
       <!-- <div id="copyAsMd" class="action">HTML</div> -->
-      <div id="copyAsHtml" class="action">HTML</div>
     </div>
   </div>
-  <div class="section">
+  <!-- <div class="section">
     <p class="section-title">自动阅读</p>
     <div class="sub-action">
       <div id="autoRead" class="action">正常速度</div>
-      <!-- <div id="stopAutoRead">停止自动阅读</div> -->
+      <div id="stopAutoRead">停止自动阅读</div>
     </div>
-  </div>
-  <!-- <div id="generate">存为图片</div> -->
+  </div> -->
   <script type="module" src="popup.js"></script>
 </body>
 </html>

@@ -18,7 +18,7 @@ const utils = {
       utils.toast({
         type: 'toast',
         toastType: 'success',
-        text: success || 'copy fuccessfully'
+        text: success || '拷贝成功'
       });
       e.clearSelection();
     });
@@ -26,8 +26,8 @@ const utils = {
     clipboard.on('error', function(e) {
       utils.toast({
         type: 'toast',
-        toastType: 'success',
-        text: error || 'failed to copy'
+        toastType: 'failed',
+        text: error || '拷贝失败'
       });
       e.clearSelection();
     });

@@ -8,13 +8,12 @@
     section.addEventListener('click', function() {
       let item = section.querySelector(selector.action);
       let display = item.style.display;
-      // item.style.display = display === 'none' ? 'block' : 'none';
       item.style.display = display === 'block' ? 'none' : 'block';
     });
   });
 })();
 
-;(function addActionListener() {
+function addActionListener() {
   const SELECTOR_LIST = [
     {
       id: '#copyAsMd',
@@ -49,11 +48,14 @@
       chrome.tabs.executeScript({
         file: selector.file
       }, function(data) {
-        console.log('data', data); 
-        if (selector.close !== false) {
-          window.close();
-        }
+        window.close();
       });
     });
   });
-})();
+};
+
+if (typeof window.__myy__wereader === 'undefined') {
+  addActionListener();
+  window.__myy__wereader = true;
+}
+
