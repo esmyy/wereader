@@ -1,20 +1,18 @@
 {
-  "name": "Weread notes",
-  "version": "0.1",
-  "description": "Extension for exporting Weread's reading notes",
-  "manifest_version": 2,
-  "permissions": [
-    "storage",
-    "tabs",
-    "activeTab"
-  ],
-  "browser_action": {
-    "default_popup": "./popup/popup.html",
-    "default_icon": "images/icon_128.png"
+  "name": "微信读书笔记导出",
+  "manifest_version": 3,
+  "version": "1.0",
+  "description": "微信读书笔记导出，支持导出为图片，文本等",
+  "permissions": ["storage", "tabs", "activeTab"],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": "images/icon.png"
   },
-  "background": {
-    "page": "background/background.html",
-    "persistent": false
+  "icons": {
+    "16": "images/icon_16.png",
+    "32": "images/icon_32.png",
+    "48": "images/icon_48.png",
+    "128": "images/icon_128.png"
   },
   "content_scripts": [
     {

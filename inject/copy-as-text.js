@@ -1,13 +1,13 @@
 // 后序再统一设置到store
 var SELECTOR_NAME = {
-  notesWrapper: '.readerNoteList',
-  noteItem: '.sectionListItem',
-  noteTitle: '.sectionListItem_title',
-  noteContent: '.sectionListItem_content',
-  noteText: '.text',
+  notesWrapper: ".readerNoteList",
+  noteItem: ".sectionListItem",
+  noteTitle: ".sectionListItem_title",
+  noteContent: ".sectionListItem_content",
+  noteText: ".text",
 };
 
-function noticeBg(message){
+function noticeBg(message) {
   chrome.runtime.sendMessage(message);
 }
 
@@ -23,31 +23,33 @@ function copyNotes() {
     while (i < len) {
       var elem = list[i];
       var title = elem.querySelector(SELECTOR_NAME.noteTitle);
-      var text = elem.querySelector(`${SELECTOR_NAME.noteContent} ${SELECTOR_NAME.noteText}`);
+      var text = elem.querySelector(
+        `${SELECTOR_NAME.noteContent} ${SELECTOR_NAME.noteText}`
+      );
       if (title) {
         if (chapter) {
           save_list.push({
-            ...chapter
+            ...chapter,
           });
         }
         chapter = {
           title: title.innerHTML,
-          noteList: []
-        }
+          noteList: [],
+        };
       }
-  
+
       if (text) {
         chapter.noteList.push({
-          text: text.innerHTML
+          text: text.innerHTML,
         });
       }
       i++;
     }
-  
-    console.log('notice copy');
+
+    console.log("notice copy");
     noticeBg({
-      type: 'copy',
-      text: JSON.stringify(save_list)
+      type: "copy",
+      text: JSON.stringify(save_list),
     });
   }
 }
