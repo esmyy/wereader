@@ -1,0 +1,22 @@
+{
+  "name": "wereader",
+  "version": "1.0.0",
+  "description": "微信读书笔记导出，支持导出为图片，文本等",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayueyue213/wereader.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mayueyue213/wereader/issues"
+  },
+  "homepage": "https://github.com/mayueyue213/wereader#readme"
+}
