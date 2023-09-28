@@ -1,16 +1,25 @@
 {
   "name": "微信读书笔记导出",
   "manifest_version": 3,
+  "author": "esmyy",
   "version": "1.0",
-  "description": "微信读书笔记导出，支持导出为图片，文本等",
-  "permissions": ["storage", "tabs", "activeTab", "scripting"],
+  "description": "微信读书辅助工具",
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab",
+    "scripting",
+    "contextMenus",
+    "notifications"
+  ],
   "action": {
     "default_popup": "popup/popup.html",
-    "default_title": "微信读书笔记导出",
+    "default_title": "微信读书辅助工具",
     "default_icon": "images/icon.png"
   },
   "background": {
-    "service_worker": "background/background.js"
+    "service_worker": "scripts/background.js",
+    "type": "module"
   },
   "icons": {
     "16": "images/icon_16.png",
@@ -18,24 +27,20 @@
     "48": "images/icon_48.png",
     "128": "images/icon_128.png"
   },
-  "content_scripts": [
-    {
-      "matches": ["https://weread.qq.com/web/reader/*"],
-      "js": [
-        "lib/html2canvas.min.js",
-        "lib/filesaver.min.js",
-        "content/content-script.js",
-        "content/toast.js"
-      ]
-    }
-  ],
   "commands": {
     "_execute_action": {
       "suggested_key": {
-        "default": "Ctrl+B",
-        "mac": "Command+B"
+        "default": "Ctrl+E",
+        "mac": "Command+E"
       }
     }
   },
+  "host_permissions": ["https://weread.qq.com/*"],
+  "content_scripts": [
+    {
+      "js": ["content/content.js"],
+      "matches": ["https://weread.qq.com/*"]
+    }
+  ],
   "options_page": "./options/options.html"
 }
